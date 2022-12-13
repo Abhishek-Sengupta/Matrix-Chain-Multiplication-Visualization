@@ -192,21 +192,17 @@ class MatChainMul(tk.Frame):
 
 # Driver code
 file = open('Input.txt', 'r')
-dims = []
-while 1:
-    dim = file.read(1)
-    if not dim:
-        break
-    if dim != ' ':
-        dims.append(dim)
+dims = file.read().split(' ')[1:-1]
 
 for i in range(len(dims)):
     dims[i] = int(dims[i])
+
 print("Dimensions = ", dims)
 
 chain = {}
 random.seed(4)
 i = 0
+
 while True:
     m = dims[i]
     n = dims[i+1]
